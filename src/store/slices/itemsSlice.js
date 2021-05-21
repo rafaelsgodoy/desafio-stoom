@@ -99,17 +99,7 @@ export const itemsSlice = createSlice({
     tamanhos_pizzas,
     pizza_dia
   },
-  reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
-  },
+  reducers: {},
 })
 export const getHotFlavor = state => state.sabores.filter(el => el.hot === true);
 
