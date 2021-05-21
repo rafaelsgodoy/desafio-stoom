@@ -1,4 +1,8 @@
 ## Desafio Stoom
+- ReacJs
+- MaterialUI
+- ReduxToolkit
+
 #Fluxo
 - Home
  - Pizza do dia 
