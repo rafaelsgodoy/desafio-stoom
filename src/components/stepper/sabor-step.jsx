@@ -9,7 +9,6 @@ const SaborStep = ({ setActiveStep }) => {
   const sabores = useSelector((state) => state.items.sabores);
   const orderInProgress = useSelector((state) => state.order.orderInProgress);
   const dispatch = useDispatch();
-  console.log("orderInProgress", orderInProgress);
 
   const handleClick = (sabor) => {
     const order = {
