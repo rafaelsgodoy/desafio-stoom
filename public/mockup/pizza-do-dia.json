@@ -1,0 +1,20 @@
+{
+  "sabor": {
+    "id": 1,
+    "name": "Pizza Calabresa",
+    "price": "14,90",
+    "points": 30,
+    "image": "assets/images/pizza1.jpg",
+    "ingredients": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+  },
+  "tamanho": {
+    "id": 1,
+    "name": "Grande",
+    "description": "Lorem ipsum dolor sit amet"
+  },
+  "massa": {
+    "id": 1,
+    "name": "Massa Napolitana",
+    "description": "Cillum dolore eu fugiat nulla pariatur"
+  }
+}

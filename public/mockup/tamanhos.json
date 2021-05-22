@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Grande",
+    "description": "Lorem ipsum dolor sit amet"
+  },
+  {
+    "id": 2,
+    "name": "Média",
+    "description": "Duis aute irure dolor in reprehenderit"
+  },
+  {
+    "id": 3,
+    "name": "Mini Pizza",
+    "description": "Cillum dolore eu fugiat nulla pariatur"
+  }
+]
