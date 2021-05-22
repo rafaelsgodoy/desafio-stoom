@@ -1,108 +1,65 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import Api from '../../api/api'
 
-const pizza_dia = {
-  sabor: {
-    id: 1,
-    name: 'Pizza Calabresa',
-    price: "14,90",
-    points: 30,
-    image: 'assets/images/pizza1.jpg',
-    ingredients: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
-  },
-  tamanho: {
-    id: 1,
-    name: 'Grande',
-    description: 'Lorem ipsum dolor sit amet'
-  },
-  massa: {
-    id: 1,
-    name: 'Massa Napolitana',
-    description: 'Cillum dolore eu fugiat nulla pariatur'
-  },
-}
+export const getSabores = createAsyncThunk(
+  'orders/getSabores',
+  async () => {
+    const response = await Api.getSabores();
+    return response;
+  }
+)
 
-const sabores = [
-  {
-    id: 1,
-    name: 'Pizza Calabresa',
-    price: "14,90",
-    points: 30,
-    image: 'assets/images/pizza1.jpg',
-    ingredients: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
-  },
-  {
-    id: 2,
-    name: 'Pizza 4 Queijos',
-    price: "16,90",
-    points: 40,
-    image: '/assets/images/pizza2.jpg',
-    ingredients: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
-    hot: true
-  },
-  {
-    id: 3,
-    name: 'Pizza Vegetariana',
-    price: "22,90",
-    points: 50,
-    image: '/assets/images/pizza3.jpg',
-    ingredients: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
-  },
-  {
-    id: 4,
-    name: 'Pizza Brocolis com Catupiry',
-    price: "26,90",
-    points: 70,
-    image: '/assets/images/pizza4.jpg',
-    ingredients: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
-  },
-]
-const massas = [
-  {
-    id: 1,
-    name: 'Massa Napolitana',
-    description: 'Cillum dolore eu fugiat nulla pariatur'
-  },
-  {
-    id: 2,
-    name: 'Massa Siciliana',
-    description: 'Lorem ipsum dolor sit amet'
-  },
-  {
-    id: 3,
-    name: 'Massa Prime',
-    description: 'Duis aute irure dolor in reprehenderit'
+export const getMassas = createAsyncThunk(
+  'orders/getMassas',
+  async () => {
+    const response = await Api.getMassas();
+    return response;
   }
-]
-const tamanhos_pizzas = [
-  {
-    id: 1,
-    name: 'Grande',
-    description: 'Lorem ipsum dolor sit amet'
-  },
-  {
-    id: 2,
-    name: 'Média',
-    description: 'Duis aute irure dolor in reprehenderit'
-  },
-  {
-    id: 3,
-    name: 'Mini Pizza',
-    description: 'Cillum dolore eu fugiat nulla pariatur'
+)
+
+export const getTamanhos = createAsyncThunk(
+  'orders/getTamanhos',
+  async () => {
+    const response = await Api.getTamanhos();
+    return response;
   }
-]
+)
+
+export const getPizzaDoDia = createAsyncThunk(
+  'orders/getPizzaDoDia',
+  async () => {
+    const response = await Api.getTamanhos();
+    return response;
+  }
+)
 
 export const itemsSlice = createSlice({
   name: 'items',
   initialState: {
-    sabores,
-    massas,
-    tamanhos_pizzas,
-    pizza_dia
+    sabores: null,
+    massas: null,
+    tamanhos_pizzas: null,
+    pizza_dia: null
   },
-  reducers: {},
+  reducers: {
+  },
+  extraReducers: {
+    [getSabores.fulfilled]: (state, action) => {
+      state.sabores = action.payload;
+    },
+    [getMassas.fulfilled]: (state, action) => {
+      state.massas = action.payload;
+    },
+    [getTamanhos.fulfilled]: (state, action) => {
+      state.tamanhos_pizzas = action.payload;
+    },
+    [getPizzaDoDia.fulfilled]: (state, action) => {
+      state.pizza_dia = action.payload;
+    },
+  }
 })
 export const getHotFlavor = state => state.sabores.filter(el => el.hot === true);
 
-export const { increment, decrement, incrementByAmount } = itemsSlice.actions
+export const { increment, decrement, incrementByAmount, initApp } = itemsSlice.actions
 
 export default itemsSlice.reducer

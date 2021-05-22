@@ -13,7 +13,8 @@ const HotSelleing = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setHotselling(pizzas.find(el => el.hot === true));
+    if (pizzas)
+      setHotselling(pizzas.find(el => el.hot === true));
   }, [pizzas]);
 
   const handleClick = (sabor) => {

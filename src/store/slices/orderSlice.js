@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid';
 
+
 const initialSatateOrderInProgress = {
   sabor: null,
   tamanho: null,
@@ -33,11 +34,11 @@ export const orderSlice = createSlice({
         if (el.order.sabor.hot)
           totalPoints += parseInt(el.order.sabor.points)
       });
-      console.log("totalPoints", totalPoints)
       state.points += totalPoints;
       state.order = [];
     }
   },
+
 })
 export const { incrementPoints, setOrderInProgress, finishOrderInProgress, removeOrderBydId, finishCart } = orderSlice.actions
 

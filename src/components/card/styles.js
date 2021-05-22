@@ -22,6 +22,6 @@ export const useStyles = makeStyles((theme) => ({
     color: 'white',
     textAlign: 'center',
     right: 20,
-    top:10
+    top:20
   }
 }));

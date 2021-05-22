@@ -5,7 +5,12 @@ import TabsComponent from '../../components/tabs/tabs';
 
 import HotSelleing from '../../components/hotSelling/hotSelling';
 
+import useInitApp from '../../hooks/useInitApp';
+
 const Home = () => {
+
+  useInitApp();
+
 
   return <>
     <Header />
