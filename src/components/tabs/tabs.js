@@ -9,7 +9,7 @@ const TabsComponent = () => {
       <Box width={1 / 2} p={1}>
         <Button
           onClick={() => {
-          }} variant="contained" disableElevation color="primary" fullWidth size="large">Monte o seu</Button>
+          }} variant="contained" disableElevation color="primary" fullWidth size="large">Monte a sua</Button>
       </Box>
       <Box width={1 / 2} p={1}>
         <Button

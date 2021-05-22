@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Selecione um tamanho', 'Seleciona a massa', 'Escolha um sabor'];
+  return ['Selecione um tamanho', 'Selecione a massa', 'Escolha um sabor'];
 }
 
 export default function StepperComponent() {
